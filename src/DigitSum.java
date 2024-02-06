@@ -1,5 +1,5 @@
 /*
- * TITLE: Review 01 - DigitSum
+ * TITLE: Review 01 - Digit Sum
  * NAME: James Tung
  * DATE: 2024-02-05
  * DESCRIPTION: This program takes a three-digit number as input and returns the sum of its digits.

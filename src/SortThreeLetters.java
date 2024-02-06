@@ -1,5 +1,5 @@
 /*
- * TITLE: Review 02 - SortThreeLetters
+ * TITLE: Review 02 - Sort Three Letters
  * NAME: James Tung
  * DATE: 2024-02-05
  * DESCRIPTION: This program takes three letters as input and returns them in alphabetical order.
