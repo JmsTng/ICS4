@@ -5,8 +5,22 @@
  * DESCRIPTION:
  */
 
+import java.util.Scanner;
+
 public class LeastTwoPower {
     public static void main(String[] args) {
-        // Code
+        // Variables
+        Scanner sc = new Scanner(System.in);
+        int target, power;
+
+        // Input
+        System.out.print("Enter a number: ");
+        target = sc.nextInt();
+
+        // Calculations
+        power = (int) Math.ceil(Math.log(target) / Math.log(2));
+
+        // Output
+        System.out.println("The least power of 2 greater than or equal to " + target + " is 2^" + power + " = " + (int) Math.pow(2, power));
     }
 }
