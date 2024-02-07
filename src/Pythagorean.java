@@ -1,8 +1,8 @@
 /*
- * TITLE: Homework Set XX - Pythagorean
+ * TITLE: Review 02 - Pythagorean
  * NAME: James Tung
  * DATE: 2024-02-06
- * DESCRIPTION:
+ * DESCRIPTION: Prints all Pythagorean triples who's largest member is less than or equal to an input number.
  */
 
 import java.util.Scanner;
