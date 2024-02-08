@@ -2,7 +2,7 @@
  * TITLE: Review 03 - Non-uniform 2D Array
  * NAME: James Tung
  * DATE: 02/07/2024
- * DESCRIPTION:
+ * DESCRIPTION: Sum all the elements in a 2D array of non-uniform length.
  */
 
 public class NonUniform2DArray {

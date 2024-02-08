@@ -1,5 +1,5 @@
 /*
- * TITLE: Review 03 - Simple1DArray
+ * TITLE: Review 03 - Simple 1D Array
  * NAME: James Tung
  * DATE: 02/07/2024
  * DESCRIPTION: Perform multiple tasks on an array.
@@ -45,6 +45,7 @@ public class Simple1DArray {
         for (int i : arr) {
             sampleSum += i;
         }
+        System.out.println(sampleSum);
 
         // Part (g)
         for (int i : arr) {
