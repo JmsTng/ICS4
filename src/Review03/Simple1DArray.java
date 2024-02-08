@@ -5,6 +5,8 @@
  * DESCRIPTION: Perform multiple tasks on an array.
  */
 
+package Review03;
+
 import java.util.Scanner;
 
 public class Simple1DArray {

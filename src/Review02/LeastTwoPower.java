@@ -1,9 +1,11 @@
 /*
- * TITLE: Review 02 - LeastTwoPower
+ * TITLE: Review 02 - Least Power of Two
  * NAME: James Tung
  * DATE: 02/06/2024
  * DESCRIPTION: Given an integer n, finds the first integer m where 2^m is greater than or equal to n.
  */
+
+package Review02;
 
 import java.util.Scanner;
 

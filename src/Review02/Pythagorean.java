@@ -2,8 +2,10 @@
  * TITLE: Review 02 - Pythagorean
  * NAME: James Tung
  * DATE: 2024-02-06
- * DESCRIPTION: Prints all Pythagorean triples who's largest member is less than or equal to an input number.
+ * DESCRIPTION: Print all Pythagorean triples who's largest member is less than or equal to an input number.
  */
+
+package Review02;
 
 import java.util.Scanner;
 

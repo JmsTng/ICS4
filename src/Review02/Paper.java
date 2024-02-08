@@ -5,6 +5,8 @@
  * DESCRIPTION: This program calculates the area and thickness of a piece of paper after being folded 40 times.
  */
 
+package Review02;
+
 public class Paper {
     public static void main(String[] args) {
         // Variables

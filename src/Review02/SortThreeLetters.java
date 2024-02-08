@@ -5,6 +5,8 @@
  * DESCRIPTION: This program takes three letters as input and returns them in alphabetical order.
  */
 
+package Review02;
+
 import java.util.Scanner;
 
 public class SortThreeLetters {

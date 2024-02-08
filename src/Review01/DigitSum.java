@@ -5,6 +5,8 @@
  * DESCRIPTION: This program takes a three-digit number as input and returns the sum of its digits.
  */
 
+package Review01;
+
 import java.util.Scanner;
 
 public class DigitSum {

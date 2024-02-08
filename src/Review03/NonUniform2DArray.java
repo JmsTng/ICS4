@@ -5,6 +5,8 @@
  * DESCRIPTION: Sum all the elements in a 2D array of non-uniform length.
  */
 
+package Review03;
+
 public class NonUniform2DArray {
     public static void main(String[] args) {
         // Variables

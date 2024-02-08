@@ -5,6 +5,8 @@
  * DESCRIPTION: Calculate the average of each student's marks, and compare them to the class average.
  */
 
+package Review03;
+
 import java.util.Scanner;
 
 public class Marks {

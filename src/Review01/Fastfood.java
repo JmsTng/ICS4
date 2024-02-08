@@ -1,9 +1,11 @@
 /*
- * TITLE: Review 01 - Fastfood
+ * TITLE: Review 01 - Fast Food
  * NAME: James Tung
  * DATE: 2024-02-05
- * DESCRIPTION:
+ * DESCRIPTION: Given a quantity of each item, calculate the cost with tax, and the change due.
  */
+
+package Review01;
 
 import java.util.Scanner;
 

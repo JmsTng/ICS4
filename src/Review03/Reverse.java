@@ -5,6 +5,8 @@
  * DESCRIPTION: Reverse an array using a both second array, and inline reversal.
  */
 
+package Review03;
+
 import java.util.Scanner;
 
 public class Reverse {

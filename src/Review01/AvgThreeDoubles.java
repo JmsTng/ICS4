@@ -5,6 +5,8 @@
  * DESCRIPTION: This program takes three doubles as input and returns the average of the three numbers.
  */
 
+package Review01;
+
 import java.util.Scanner;
 
 public class AvgThreeDoubles {
