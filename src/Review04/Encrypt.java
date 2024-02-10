@@ -2,8 +2,10 @@
  * TITLE: Review 04 - Encrypt
  * NAME: James Tung
  * DATE: 2024-02-07
- * DESCRIPTION:
+ * DESCRIPTION: Encrypts a string by shifting each character by 2, except for the first and last characters, which are swapped.
  */
+
+package Review04;
 
 import java.util.Scanner;
 

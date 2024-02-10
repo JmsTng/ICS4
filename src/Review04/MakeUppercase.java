@@ -5,6 +5,8 @@
  * DESCRIPTION: Converts a string to uppercase.
  */
 
+package Review04;
+
 import java.util.Scanner;
 
 public class MakeUppercase {
