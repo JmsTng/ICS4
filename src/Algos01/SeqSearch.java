@@ -2,7 +2,7 @@
  * TITLE: Sequential (Linear) Search
  * NAME: James Tung
  * DATE: 02/27/2024
- * DESCRIPTION:
+ * DESCRIPTION: Simple implementation of sequential search on a list of Strings.
  */
 
 package Algos01;
