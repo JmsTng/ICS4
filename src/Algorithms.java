@@ -5,12 +5,22 @@
  * DESCRIPTION: A collection of common searching/sorting algorithms.
  */
 
+import java.util.Arrays;
+
 public class Algorithms {
     public static void main(String[] args) {
-        System.out.println(bin(new String[]{"a", "b", "c", "d", "e", "f", "g", "h"}, "b"));
+        System.out.println(bin(new String[]{"a", "b", "c", "d", "e", "f", "g", "h"}, "a"));
         System.out.println(bin(new String[]{"a", "b", "c", "d", "e", "f", "g", "h"}, "e"));
         System.out.println(bin(new String[]{"a", "b", "c", "d", "e", "f", "g", "h"}, "f"));
+
+        String[] arr = new String[]{"g", "f", "h", "e", "", "a", "bc", "b"};
+        insertion(arr);
+        System.out.println(Arrays.toString(arr));
+        arr = new String[]{"g", "f", "h", "e", "", "a", "bc", "b"};
+        bubble(arr);
+        System.out.println(Arrays.toString(arr));
     }
+
     public static int seq(String[] list, String item) {
         for (int i = 0; i < list.length; i++) {
             if (item.equals(list[i])) return i;
@@ -25,11 +35,40 @@ public class Algorithms {
 
         while (start < end) {
             middle = (start + end) / 2;
-            System.out.printf("%s %s %d %d %d %d%n", list[middle], item, list[middle].compareTo(item), start, middle, end);
-            if      (list[middle].compareTo(item) < 0) end = middle;
-            else if (list[middle].compareTo(item) > 0) start = middle + 1;
+            if      (item.compareTo(list[middle]) < 0) end = middle;
+            else if (item.compareTo(list[middle]) > 0) start = middle + 1;
             else                                       return middle;
         }
         return -1;
+    }
+
+    public static void insertion(String[] list) {
+        String temp;
+
+        for (int i = 1; i < list.length; i++) {
+            int j = i - 1;
+            temp = list[i];
+
+            while (j >= 0 && temp.compareTo(list[j]) < 0) {
+                list[j + 1] = list[j];
+                j--;
+            }
+
+            list[j + 1] = temp;
+        }
+    }
+
+    public static void bubble(String[] list) {
+        String temp;
+
+        for (int i = 0; i < list.length; i++) {
+            for (int j = 0; j < list.length; j++) {
+                if (list[j].compareTo(list[i]) > 0) {
+                    temp = list[j];
+                    list[j] = list[i];
+                    list[i] = temp;
+                }
+            }
+        }
     }
 }
