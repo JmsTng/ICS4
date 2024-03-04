@@ -2,7 +2,7 @@
  * TITLE: Review 07 - Count Cases
  * NAME: James Tung
  * DATE: 2024-02-15
- * DESCRIPTION:
+ * DESCRIPTION: Count the number of uppercase and lowercase letters in a file.
  */
 
 package Review07;
