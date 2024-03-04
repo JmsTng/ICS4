@@ -8,195 +8,241 @@
 import java.util.Arrays;
 
 public class Algorithms {
-    public static void main(String[] args) {
-        int[] arr = new int[]{5, 1, 67, 2, 3, 7, 2};
-        insertion(arr);
-        System.out.println(Arrays.toString(arr));
-        System.out.println(bin(arr, 2));
-    }
-
-    public static int seq(String[] list, String item) {
-        for (int i = 0; i < list.length; i++) {
-            if (item.equals(list[i])) return i;
+    /**
+     * Sequential/Linear Search
+     * Traverse the list and return when the target value is found.
+     * Ideal for unsorted lists.
+     *
+     * @param arr   array to search through
+     * @param item  item to find in array
+     *
+     * @return      index of the item in the array; -1 if not found
+     */
+    public static int seq(String[] arr, String item) {
+        for (int i = 0; i < arr.length; i++) {
+            if (item.equals(arr[i])) return i;
         }
         return -1;
     }
 
-    public static int seq(int[] list, int item) {
-        for (int i = 0; i < list.length; i++) {
-            if (item == list[i]) return i;
+    public static int seq(int[] arr, int item) {
+        for (int i = 0; i < arr.length; i++) {
+            if (item == arr[i]) return i;
         }
         return -1;
     }
 
-    public static int seq(double[] list, double item) {
-        for (int i = 0; i < list.length; i++) {
-            if (item == list[i]) return i;
+    public static int seq(double[] arr, double item) {
+        for (int i = 0; i < arr.length; i++) {
+            if (item == arr[i]) return i;
         }
         return -1;
     }
 
-    public static int bin(String[] list, String item) {
+    /**
+     * Binary Search
+     * Repeatedly halves the searching area to close in on the target value.
+     * Only works with sorted datasets.
+     *
+     * @param arr   array to search through
+     * @param item  item to find in the array
+     *
+     * @return      index of the item in the array; -1 if not found
+     */
+    public static int bin(String[] arr, String item) {
         int start = 0;
-        int end = list.length - 1;
+        int end = arr.length - 1;
         int middle;
 
         while (start < end) {
             middle = (start + end) / 2;
-            if      (item.compareTo(list[middle]) < 0) end = middle;
-            else if (item.compareTo(list[middle]) > 0) start = middle + 1;
+            if      (item.compareTo(arr[middle]) < 0) end = middle;
+            else if (item.compareTo(arr[middle]) > 0) start = middle + 1;
             else                                       return middle;
         }
         return -1;
     }
 
-    public static int bin(int[] list, int item) {
+    public static int bin(int[] arr, int item) {
         int start = 0;
-        int end = list.length;
+        int end = arr.length;
 
         while (start < end) {
-            if (item < list[(start + end) / 2])      end = (start + end) / 2;
-            else if (item > list[(start + end) / 2]) start = (start + end) / 2 + 1;
+            if (item < arr[(start + end) / 2])      end = (start + end) / 2;
+            else if (item > arr[(start + end) / 2]) start = (start + end) / 2 + 1;
             else                                     return (start + end) / 2;
         }
         return -1;
     }
 
-    public static int bin(double[] list, double item) {
+    public static int bin(double[] arr, double item) {
         int start = 0;
-        int end = list.length;
+        int end = arr.length;
 
         while (start < end) {
-            if (item < list[(start + end) / 2])      end = (start + end) / 2;
-            else if (item > list[(start + end) / 2]) start = (start + end) / 2 + 1;
+            if (item < arr[(start + end) / 2])      end = (start + end) / 2;
+            else if (item > arr[(start + end) / 2]) start = (start + end) / 2 + 1;
             else                                     return (start + end) / 2;
         }
         return -1;
     }
 
-    public static void selection(String[] list) {
+    /**
+     * Selection Sort
+     *
+     * @param arr   array to sort
+     */
+    public static void selection(String[] arr) {
         String temp;
         int lowest;
 
-        for (int i = 0; i < list.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             lowest = i;
 
-            for (int j = i; j < list.length; j++) {
-                if (list[lowest].compareTo(list[j]) > 0) lowest = j;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[lowest].compareTo(arr[j]) > 0) lowest = j;
             }
 
-            temp = list[i];
-            list[i] = list[lowest];
-            list[lowest] = temp;
+            temp = arr[i];
+            arr[i] = arr[lowest];
+            arr[lowest] = temp;
         }
     }
 
-    public static void selection(int[] list) {
+    public static void selection(int[] arr) {
         int temp;
         int lowest;
 
-        for (int i = 0; i < list.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             lowest = i;
 
-            for (int j = i; j < list.length; j++) {
-                if (list[j] < list[lowest]) lowest = j;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < arr[lowest]) lowest = j;
             }
 
-            temp = list[i];
-            list[i] = list[lowest];
-            list[lowest] = temp;
+            temp = arr[i];
+            arr[i] = arr[lowest];
+            arr[lowest] = temp;
         }
     }
 
-    public static void selection(double[] list) {
+    public static void selection(double[] arr) {
         double temp;
         int lowest;
 
-        for (int i = 0; i < list.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             lowest = i;
 
-            for (int j = i; j < list.length; j++) {
-                if (list[j] < list[lowest]) lowest = j;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < arr[lowest]) lowest = j;
             }
 
-            temp = list[i];
-            list[i] = list[lowest];
-            list[lowest] = temp;
+            temp = arr[i];
+            arr[i] = arr[lowest];
+            arr[lowest] = temp;
         }
     }
 
-    public static void insertion(String[] list) {
+    /**
+     * Insertion Sort
+     *
+     * @param arr   array to sort
+     */
+    public static void insertion(String[] arr) {
         String temp;
         int j;
 
-        for (int i = 1; i < list.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             j = i - 1;
-            temp = list[i];
+            temp = arr[i];
 
-            while (j >= 0 && temp.compareTo(list[j]) < 0) {
-                list[j + 1] = list[j];
+            while (j >= 0 && temp.compareTo(arr[j]) < 0) {
+                arr[j + 1] = arr[j];
                 j--;
             }
 
-            list[j + 1] = temp;
+            arr[j + 1] = temp;
         }
     }
 
-    public static void insertion(int[] list) {
+    public static void insertion(int[] arr) {
         int temp;
         int j;
 
-        for (int i = 1; i < list.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             j = i - 1;
-            temp = list[i];
+            temp = arr[i];
 
-            while (j >= 0 && temp < list[j]) {
-                System.out.println(Arrays.toString(list));
-                list[j + 1] = list[j];
+            while (j >= 0 && temp < arr[j]) {
+                arr[j + 1] = arr[j];
                 j--;
             }
 
-            list[j + 1] = temp;
+            arr[j + 1] = temp;
         }
     }
 
-    public static void insertion(double[] list) {
+    public static void insertion(double[] arr) {
         double temp;
         int j;
 
-        for (int i = 1; i < list.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             j = i - 1;
-            temp = list[i];
+            temp = arr[i];
 
-            while (j >= 0 && temp < list[j]) {
-                System.out.println(Arrays.toString(list));
-                list[j + 1] = list[j];
+            while (j >= 0 && temp < arr[j]) {
+                arr[j + 1] = arr[j];
                 j--;
             }
 
-            list[j + 1] = temp;
+            arr[j + 1] = temp;
         }
     }
 
-    public static void bubble(String[] list) {
+    /**
+     * Bubble Sort
+     *
+     * @param arr   array to sort
+     */
+    public static void bubble(String[] arr) {
         String temp;
 
-        for (int i = 0; i < list.length; i++) {
-            for (int j = 0; j < list.length; j++) {
-                if (list[j].compareTo(list[i]) > 0) {
-                    temp = list[j];
-                    list[j] = list[i];
-                    list[i] = temp;
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1; j++) {
+                if (arr[j].compareTo(arr[j + 1]) > 0) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[i] = temp;
                 }
             }
         }
     }
 
-    public static void bubble(int[] list) {
+    public static void bubble(int[] arr) {
         int temp;
 
-        for (int i = 0; i < list.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+    }
 
+    public static void bubble(double[] arr) {
+        double temp;
+
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
         }
     }
 }
