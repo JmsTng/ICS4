@@ -28,16 +28,16 @@ public class PartialSelection {
         int temp;
         int high;
 
-        for (int i = 0; i < k; i++) {
-            high = i;
+        for (int i = 1; i <= k; i++) {
+            high = 0;
 
-            for (int j = i; j < arr.length; j++) {
+            for (int j = arr.length - i; j >= 0; j--) {
                 if (arr[j] > arr[high]) high = j;
             }
 
             temp = arr[high];
-            arr[high] = arr[k];
-            arr[k] = temp;
+            arr[high] = arr[arr.length - i];
+            arr[arr.length - i] = temp;
         }
     }
 }

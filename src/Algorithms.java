@@ -8,6 +8,14 @@
 import java.util.Arrays;
 
 public class Algorithms {
+    public static void main(String[] args) {
+        String[] arr1 = new String[]{"a", "b", "q", "", "xc", "QWF", "123", "c", "xxx", "yyy", "zzz", "zzzz"};
+        String[] arr2 = new String[]{"a", "b", "c", "", "A", "QWF", "123", "u"};
+
+        shaker(arr1);
+        System.out.println(Arrays.toString(arr1));
+    }
+
     /**
      * Sequential/Linear Search
      * Traverse the list and return when the target value is found.
@@ -89,6 +97,7 @@ public class Algorithms {
 
     /**
      * Selection Sort
+     * Find the max/min value and swap with the current index.
      *
      * @param arr   array to sort
      */
@@ -145,6 +154,7 @@ public class Algorithms {
 
     /**
      * Insertion Sort
+     * Shift elements to correctly position the next index.
      *
      * @param arr   array to sort
      */
@@ -201,6 +211,7 @@ public class Algorithms {
 
     /**
      * Bubble Sort
+     * Swap unordered adjacent elements.
      *
      * @param arr   array to sort
      */
@@ -208,7 +219,7 @@ public class Algorithms {
         String temp;
 
         for (int i = 1; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - 1; j++) {
+            for (int j = 0; j < arr.length - i; j++) {
                 if (arr[j].compareTo(arr[j + 1]) > 0) {
                     temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -222,7 +233,7 @@ public class Algorithms {
         int temp;
 
         for (int i = 1; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - 1; j++) {
+            for (int j = 0; j < arr.length - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     temp = arr[j];
                     arr[j] = arr[j + 1];
@@ -236,11 +247,38 @@ public class Algorithms {
         double temp;
 
         for (int i = 1; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - 1; j++) {
+            for (int j = 0; j < arr.length - i; j++) {
                 if (arr[j] > arr[j + 1]) {
                     temp = arr[j];
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+
+    public static void shaker(String[] arr) {
+        String temp;
+        boolean flip = true;
+
+        for (int i = 1; i < arr.length / 2 && flip; i++) {
+            flip = false;
+            for (int j = i - 1; j < arr.length - i; j++) {
+                if (arr[j].compareTo(arr[j + 1]) > 0) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    flip = true;
+                }
+            }
+
+            for (int j = arr.length - i - 1; j > i - 1; j--) {
+                if (arr[j].compareTo(arr[j - 1]) < 0) {
+                    temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                    flip = true;
                 }
             }
         }
