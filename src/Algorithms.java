@@ -8,6 +8,14 @@
 import java.util.Arrays;
 
 public class Algorithms {
+    public static void main(String[] args) {
+        String[] arr1 = new String[]{"a", "b", "q", "", "xc", "QWF", "123", "c", "xxx", "yyy", "zzz", "zzzz"};
+        String[] arr2 = new String[]{"a", "b", "c", "", "A", "QWF", "123", "u"};
+
+        shaker(arr1);
+        System.out.println(Arrays.toString(arr1));
+    }
+
     /**
      * Sequential/Linear Search
      * Traverse the list and return when the target value is found.
