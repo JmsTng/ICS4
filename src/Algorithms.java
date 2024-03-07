@@ -5,17 +5,7 @@
  * DESCRIPTION: A collection of common searching/sorting algorithms.
  */
 
-import java.util.Arrays;
-
 public class Algorithms {
-    public static void main(String[] args) {
-        String[] arr1 = new String[]{"a", "b", "q", "", "xc", "QWF", "123", "c", "xxx", "yyy", "zzz", "zzzz"};
-        String[] arr2 = new String[]{"a", "b", "c", "", "A", "QWF", "123", "u"};
-
-        shaker(arr1);
-        System.out.println(Arrays.toString(arr1));
-    }
-
     /**
      * Sequential/Linear Search
      * Traverse the list and return when the target value is found.
@@ -59,7 +49,7 @@ public class Algorithms {
      */
     public static int bin(String[] arr, String item) {
         int start = 0;
-        int end = arr.length - 1;
+        int end = arr.length;
         int middle;
 
         while (start < end) {
@@ -74,11 +64,13 @@ public class Algorithms {
     public static int bin(int[] arr, int item) {
         int start = 0;
         int end = arr.length;
+        int middle;
 
         while (start < end) {
-            if (item < arr[(start + end) / 2])      end = (start + end) / 2;
-            else if (item > arr[(start + end) / 2]) start = (start + end) / 2 + 1;
-            else                                     return (start + end) / 2;
+            middle = (start + end) / 2;
+            if (item < arr[middle])      end = middle;
+            else if (item > arr[middle]) start = middle + 1;
+            else                         return middle;
         }
         return -1;
     }
@@ -86,11 +78,13 @@ public class Algorithms {
     public static int bin(double[] arr, double item) {
         int start = 0;
         int end = arr.length;
+        int middle;
 
         while (start < end) {
-            if (item < arr[(start + end) / 2])      end = (start + end) / 2;
-            else if (item > arr[(start + end) / 2]) start = (start + end) / 2 + 1;
-            else                                     return (start + end) / 2;
+            middle = (start + end) / 2;
+            if (item < arr[middle])      end = middle;
+            else if (item > arr[middle]) start = middle + 1;
+            else                         return middle;
         }
         return -1;
     }
