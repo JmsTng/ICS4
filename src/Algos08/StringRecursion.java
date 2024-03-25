@@ -20,7 +20,9 @@ public class StringRecursion {
 
     public static boolean equalsIgnoreCase(String s1, String s2) {
         if (s1.charAt(0) != s2.charAt(0)) {
-            if (s1.substring(0, 0).toLowerCase().equals(s2.substring(0, 0).toLowerCase()))
+            if (s1.substring(0, 0).toLowerCase().equals(s2.substring(0, 0).toLowerCase())) {
+
+            }
         }
 
         return equalsIgnoreCase(s1.substring(1), s2.substring(1));

@@ -17,8 +17,13 @@ public class LargestOfList {
     }
 
     public static int largest(int[] list, int start, int end) {
+        int l, temp;
+
         if (start >= end) return list[end];
 
-        return Math.max(Math.max(list[start], list[end]), largest(list, start + 1, end - 1));
+        l = list[start];
+        if ((temp = largest(list, start + 1, end)) > l) l = temp;
+
+        return l;
     }
 }
