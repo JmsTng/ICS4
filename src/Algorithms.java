@@ -99,7 +99,7 @@ public class Algorithms {
         String temp;
         int lowest;
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             lowest = i;
 
             for (int j = i; j < arr.length; j++) {
@@ -116,7 +116,7 @@ public class Algorithms {
         int temp;
         int lowest;
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             lowest = i;
 
             for (int j = i; j < arr.length; j++) {
@@ -133,7 +133,7 @@ public class Algorithms {
         double temp;
         int lowest;
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             lowest = i;
 
             for (int j = i; j < arr.length; j++) {
